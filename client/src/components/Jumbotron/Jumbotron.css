@@ -1,0 +1,8 @@
+.jumbotron {
+    min-height: 300px;
+    padding-top: 100px;
+    background-color: #94A8D9;
+    text-align: center;
+    color: white;
+    font-size: 50px;
+  }
