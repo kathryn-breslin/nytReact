@@ -17,8 +17,9 @@ class Home extends Component {
 
     getArticlesFromDatabase = () => {
         API.getArticle()
-            .then(res => this.setState({ articles: res.data }))
-            .catch(err => console.log(err));
+            .then((res) => {
+                this.setState({ articles: res.data })
+            })
     }
 
     showArticles = () => {
@@ -31,7 +32,7 @@ class Home extends Component {
             url={article.web_url}
             getArticlesFromDatabase={this.getArticlesFromDatabase}
             />
-        ))
+        ));
     }
 
     handleSearch = event => {
@@ -41,11 +42,17 @@ class Home extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         console.log(this.state.search)
-        this.searchArticles(this.state.search)
+        API.searchArticles(this.state.search)
         .then((res) => {
             this.setState({ articles: res.data.response.docs})
+            console.log("this.state.articles", this.state.articles)
         })
     };
+
+    handleDelete = id => {
+        API.deleteArticle(id)
+            .then(this.getArticlesFromDatabase());
+    }
 
     render() {
         return (
@@ -54,7 +61,11 @@ class Home extends Component {
                 <Container fluid>
                     <Row>
                         <Col size="md-12">
-                            <SearchForm/>
+                            <SearchForm
+                            handleSearch={this.handleSearch}
+                            handleFormSubmit={this.handleFormSubmit}
+                            showArticles={this.showArticles}
+                            />
                         </Col>
                     </Row>
                     <br></br>

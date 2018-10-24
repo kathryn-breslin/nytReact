@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default {
+const API = {
     searchArticles: function(search) {
         const APIKEY = "0f9bdfbcb2ca4522ab279a57cb127450";
 
@@ -9,13 +9,12 @@ export default {
         return axios.get(BASEURL);
     },
 
-    getArticle: function(id) {
-        return axios.get("/api/articles" + id);
-    },
-    saveArticle: function(id) {
-        return axios.post("/api/articles" + id);
+    getArticle: function() {
+        return axios.get("/api/articles");
     },
     deleteArticle: function(id){
-        return axios.delete("/api/articles/" + id);
+        return axios.delete(`/api/saved/${id}`);
     }
 };
+
+export default API;
