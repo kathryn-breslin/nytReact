@@ -6,8 +6,9 @@ export const ResultItem = props => (
         <Container>
             <Row>
                 <Col size="md-12">
-                    <h1>1</h1>
-                    <h3>Name of Article: {props.headline}</h3>
+                    <h1 id={props._id}/>
+                    <h3>{props.title}</h3>
+                    <p>Date Published: {props.date}</p>
                 </Col>
             </Row>
         </Container>
