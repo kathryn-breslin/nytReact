@@ -8,6 +8,7 @@ import { ResultItem, ResultsList } from "./Results";
 class Home extends Component {
     state = {
         articles: [],
+        renderArticles: [],
         search: ""
     };
 
@@ -18,7 +19,7 @@ class Home extends Component {
     getArticlesFromDatabase = () => {
         API.getArticle()
             .then((res) => {
-                this.setState({ articles: res.data })
+                this.setState({ renderArticles: res.data })
             })
     }
 
@@ -72,10 +73,10 @@ class Home extends Component {
                     <Row>
                         <Col size="md-12">
                             <Container>
-                                <ResultsList>
-                                    <ResultItem>
-                                            {this.showArticles}
-                                    </ResultItem>
+                                <ResultsList> 
+                                    {this.showArticles()}
+                                    {/* <ResultItem>
+                                    </ResultItem> */}
                                 </ResultsList>
                             </Container>
                         </Col>
