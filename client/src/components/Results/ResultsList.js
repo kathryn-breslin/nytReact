@@ -1,5 +1,12 @@
 import React from "react";
+import { Container } from "../Grid";
+import "./ResultList.css";
 
 export const ResultsList = props => (
-    <ul className="list-group">{props.children}</ul>
+    <Container >
+        <div id="group">
+        <div id="head">Top Stories</div>
+            <ul className="list-group">{props.children}</ul>
+        </div>
+    </Container>
 );

@@ -1,0 +1,17 @@
+div #searchDiv {
+    border: #F0EDE5 solid 10px;
+    border-radius: 15px;
+}
+
+div #searchHead {
+    background-color: #F0EDE5;
+    height: 60px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Arimo', sans-serif;
+}
+
+#form {
+    padding: 20px;
+    font-family: 'Arimo', sans-serif;
+}

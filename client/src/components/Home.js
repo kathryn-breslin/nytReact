@@ -8,8 +8,9 @@ import { ResultItem, ResultsList } from "./Results";
 class Home extends Component {
     state = {
         articles: [],
-        renderArticles: [],
-        search: ""
+        search: "",
+        startDate: "",
+        endDate: ""
     };
 
     componentDidMount () {
@@ -29,6 +30,7 @@ class Home extends Component {
             _id={article.id}
             key={article.id}
             title={article.headline.main}
+            source={article.source}
             date={article.pub_date}
             url={article.web_url}
             getArticlesFromDatabase={this.getArticlesFromDatabase}
@@ -40,13 +42,21 @@ class Home extends Component {
        this.setState({ search: event.target.value });
     };
 
+    startDate = event => {
+        this.setState({ startDate: event.target.value })
+    }
+
+    endDate = event => {
+        this.setState({ endDate: event.target.value })
+    }
+
     handleFormSubmit = event => {
         event.preventDefault();
         console.log(this.state.search)
         API.searchArticles(this.state.search)
         .then((res) => {
             this.setState({ articles: res.data.response.docs})
-            console.log("this.state.articles", this.state.articles)
+            // console.log("this.state.articles", this.state.articles)
         })
     };
 
@@ -64,6 +74,8 @@ class Home extends Component {
                         <Col size="md-12">
                             <SearchForm
                             handleSearch={this.handleSearch}
+                            startDate={this.startDate}
+                            endDate={this.endDate}
                             handleFormSubmit={this.handleFormSubmit}
                             showArticles={this.showArticles}
                             />
@@ -72,13 +84,9 @@ class Home extends Component {
                     <br></br>
                     <Row>
                         <Col size="md-12">
-                            <Container>
                                 <ResultsList> 
                                     {this.showArticles()}
-                                    {/* <ResultItem>
-                                    </ResultItem> */}
                                 </ResultsList>
-                            </Container>
                         </Col>
                     </Row>
                 </Container>

@@ -1,0 +1,13 @@
+div #group {
+    border: #F0EDE5 solid 10px;
+    background-color: #F0EDE5;
+    border-radius: 15px;
+}
+
+div #head {
+    background-color: #F0EDE5;
+    height: 60px;
+    padding: 10px;
+    font-size: 20px;
+    font-family: 'Arimo', sans-serif;
+}
