@@ -15,3 +15,7 @@ div #searchHead {
     padding: 20px;
     font-family: 'Arimo', sans-serif;
 }
+
+button #searchButton{
+    background-color: #2E4A62;
+}

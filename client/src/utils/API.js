@@ -4,7 +4,7 @@ const API = {
     searchArticles: function(search, startDate, endDate) {
         const APIKEY = "0f9bdfbcb2ca4522ab279a57cb127450";
 
-        const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKEY + "&q=" + search + "?begin_date=" + startDate + "?end_date=" + endDate;
+        const BASEURL = "https://api.nytimes.com/svc/search/v2/articlesearch.json?api-key=" + APIKEY + "&q=" + search + "?begin_date=" + startDate + "0101?end_date=" + endDate + "0101";
 
         return axios.get(BASEURL);
     },
