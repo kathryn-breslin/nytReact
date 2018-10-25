@@ -30,6 +30,7 @@ class Home extends Component {
             _id={article.id}
             key={article.id}
             title={article.headline.main}
+            snippet={article.snippet}
             source={article.source}
             date={article.pub_date}
             url={article.web_url}

@@ -6,11 +6,18 @@ export const ResultItem = props => (
     <li className="list-group-item" id="item">
         <Container>
             <Row>
-                <Col size="md-12" key={props.id}>
-                    <h1 id={props.id}/>
+                <Col size="md-12" key={props.id} id={props.id}>
                     <h3>{props.title}</h3>
-                    <p>Source: {props.source}</p>
-                    <p>Published: {props.date}</p>
+                    <h6>{props.snippet}</h6>
+                    <br></br>
+                    <Row>
+                        <Col size="sm-auto .offset-sm-1">
+                            <p>Source: {props.source}</p>
+                        </Col>
+                        <Col size="sm-auto .offset-sm-1">
+                            <p>Published: {props.date}</p>
+                        </Col>
+                    </Row>
                     <a rel="noreferrer noopener" target="_blank"href={props.url}> Go to Article</a> 
                 </Col>
             </Row>
