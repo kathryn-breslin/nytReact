@@ -15,7 +15,7 @@ export const ResultItem = props => (
                             <p>Source: {props.source}</p>
                         </Col>
                         <Col size="sm-auto .offset-sm-1">
-                            <p>Published: {props.date}</p>
+                            <p>Published: {props.pub_date}</p>
                         </Col>
                     </Row>
                     <a rel="noreferrer noopener" target="_blank"href={props.url}> Go to Article</a> 

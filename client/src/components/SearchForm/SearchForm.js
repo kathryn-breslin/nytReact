@@ -10,12 +10,12 @@ const SearchForm = props =>
                 <label for="searchTerm">Search Term:</label>
                 <input name="searchTerm" placeholder="Search Term" onChange={props.handleSearch} type="text" className="form-control" />
                 <br></br>
-                {/* <label for="numberOfRecs">Number of Records to Retrieve:</label>
+                <label for="numberOfRecs">Number of Records to Retrieve:</label>
                 <select name="numberOfRecs" placeholder="How many results would you like?" className="form-control">
-                    <option>5</option>
-                    <option>10</option>
+                    <option onClick={props.five}>5</option>
+                    <option onClick={props.five}>10</option>
                 </select>
-                <br></br> */}
+                <br></br>
                 <label for="startYear">Start Year (Optional | YYYY):</label>
                 <input name="startYear" placeholder="Start Year" onChange={props.startDate} className="form-control" />
                 <br></br>
