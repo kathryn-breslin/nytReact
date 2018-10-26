@@ -12,8 +12,8 @@ const SearchForm = props =>
                 <br></br>
                 <label for="numberOfRecs">Number of Records to Retrieve:</label>
                 <select name="numberOfRecs" placeholder="How many results would you like?" className="form-control">
-                    <option onClick={props.five}>5</option>
-                    <option onClick={props.five}>10</option>
+                    <option id="Five">5</option>
+                    <option id="Ten">10</option>
                 </select>
                 <br></br>
                 <label for="startYear">Start Year (Optional | YYYY):</label>

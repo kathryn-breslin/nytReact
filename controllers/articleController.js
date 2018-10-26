@@ -9,10 +9,8 @@ module.exports = {
         });
     },
     insert: function(req, res) {
-        console.log("req.body", req.body);
         db.Article.create(req.body).then(function(doc) {
             res.json(doc);
-            console.log("doc", doc)
         }).catch(function(err) {
             res.json(err);
         });
@@ -22,7 +20,6 @@ module.exports = {
             _id: req.params.id
         }).then(function(doc) {
             res.json(doc);
-            console.log("doc", doc);
         }).catch(function(err){
             res.json(err);
         });

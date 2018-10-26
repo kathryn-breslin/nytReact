@@ -12,7 +12,7 @@ class Home extends Component {
     state = {
         articles: [],
         search: "",
-        // recAmount: "",
+        numOfRecs: "",
         startDate: "",
         endDate: ""
     };
@@ -28,8 +28,8 @@ class Home extends Component {
             })
     }
     showArticles = () => {
-    //if else statement here
-        return this.state.articles.slice(0, 5).map(article => (
+
+        return this.state.articles.slice(0, 10).map(article => (
             <ResultItem
             _id={article.id}
             key={article.id}
