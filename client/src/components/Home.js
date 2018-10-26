@@ -5,6 +5,9 @@ import API from "../utils/API";
 import { Container, Row, Col } from "./Grid";
 import { ResultItem, ResultsList } from "./Results";
 
+// const mongoose = require("mongoose");
+// const db = require("../../../models")
+
 class Home extends Component {
     state = {
         articles: [],
@@ -45,10 +48,12 @@ class Home extends Component {
 
     startDate = event => {
         this.setState({ startDate: event.target.value })
+        console.log(event.target.value)
     }
 
     endDate = event => {
         this.setState({ endDate: event.target.value })
+        console.log(event.target.value)
     }
 
     handleFormSubmit = event => {
@@ -57,7 +62,22 @@ class Home extends Component {
         API.searchArticles(this.state.search)
         .then((res) => {
             this.setState({ articles: res.data.response.docs})
-            // console.log("this.state.articles", this.state.articles)
+            console.log("this.state.articles", this.state.articles)
+            // mongoose.connect(
+            //     process.env.MONGODB_URI || 
+            //     "mongodb://localhost/nytReact"
+            // )
+            // db.Articles
+            // .remove({})
+            // .then(() => db.Articles.collection.insertMany({ResultItem}))
+            // .then(data => {
+            //     console.log(data.result.n + "database updated");
+            //     process.exit(0);
+            // })
+            // .catch(err => {
+            //     console.log(err);
+            //     process.exit(1);
+            // });
         })
     };
 
